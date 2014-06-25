@@ -12,7 +12,7 @@ rake db:create
 rake db:migrate
 rake db:seed
 touch config/initializers/secret_token.rb
-config/initializers/secret_token.rb < "AngularRailsExample::Application.config.secret_token = '2938hasdfp982hasdjfh8923hfnax9982p389hasdf;hf;p238hfdsfds23k'"
+echo "AngularRailsExample::Application.config.secret_token = '2938hasdfp982hasdjfh8923hfnax9982p389hasdf;hf;p238hfdsfds23k'" >> config/initializers/secret_token.rb
 rails server -p 3002
 ```
 
