@@ -11,10 +11,10 @@ bundle
 rake db:create
 rake db:migrate
 rake db:seed
+touch config/initializers/secret_token.rb
+config/initializers/secret_token.rb < "AngularRailsExample::Application.config.secret_token = '2938hasdfp982hasdjfh8923hfnax9982p389hasdf;hf;p238hfdsfds23k'"
 rails server -p 3002
 ```
 
+Do yourself a favor and change that secret! (I just added one here because you'll need that file and a value there to get the server running)
 (Running on port 3002 in case you have another server running)
-
-
-
