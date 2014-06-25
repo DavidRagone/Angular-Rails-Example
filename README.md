@@ -6,8 +6,7 @@ This app is bare-bones (in functionality and design). It doesn't do much, but is
 ```
 git clone https://github.com/DavidRagone/Angular-Rails-Example.git:angular-rails-example
 cd angular-rails-example
-rvm gemset --create ruby-2.1.0@angular-rails-example
-rvm gemset use angular-rails-example
+rvm use 2.1.0@angular-rails-example --create
 bundle
 rake db:create
 rake db:migrate
