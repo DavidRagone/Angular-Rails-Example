@@ -1,12 +1,50 @@
-%h1 I AM EDIT PROFILE
-
 %ul.nav.nav-tabs
   %li.active
-    %a{href: '#'} Profile
+    %a{href: '#', class: 'tab', id: 'profile'} Profile
   %li
-    %a{href: '#'} Settings
+    %a{href: '#', class: 'tab', id: 'settings'} Settings
   %li
-    %a{href: '#'} Emails
+    %a{href: '#', class: 'tab', id: 'emails'} Emails
   %li
-    %a{href: '#'} Widgets
+    %a{href: '#', class: 'tab', id: 'widgets'} Widgets
 
+.profile
+  %h2 Tell us more about yourself!
+  = form_for @user,
+    url: profile_path(@profile),
+    method: :put,
+    html: { class: 'form-horizontal' } do |f|
+    %fieldset
+      .control-group
+        = f.label :first_name, class: 'control-label'
+        .controls
+          = f.text_field :first_name
+      .control-group
+        = f.label :last_name, class: 'control-label'
+        .controls
+          = f.text_field :last_name
+      .control-group
+        = f.label :email, class: 'control-label'
+        .controls
+          = f.text_field :email
+      .control-group
+        = f.label :bio, class: 'control-label'
+        .controls
+          = f.text_area :bio
+      .control-group
+        = f.label :display_name, class: 'control-label'
+        .controls
+          = f.select :display_name,
+            options_for_select(@user.display_name_options, @user.display_name)
+      .control-group
+        = f.label :country, class: 'control-label'
+        .controls
+          = f.select :country,
+            options_for_select(@country_options, @user.country)
+
+.settings.hidden
+  %h2 Tune some knobs, check some boxes!
+.emails.hidden
+  %h2 You want emails? We got emails!
+.widgets.hidden
+  %h2 I've got gadgets and gizmos a-plenty, I've got whozits and whatzits galore
