@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140625191236) do
+ActiveRecord::Schema.define(:version => 20140625222009) do
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.string   "author_name"
+    t.string   "image_url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "book_id",    :null => false
+    t.integer  "user_id",    :null => false
+    t.integer  "rating"
+    t.string   "shelf"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
